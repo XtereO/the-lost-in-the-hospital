@@ -32,28 +32,29 @@ module.exports = (env, argv) => {
 
   return {
     devServer: {
-      contentBase: path.join(__dirname, "dist"),
+      client: {
+        progress: true,
+      },
+      static: path.resolve(__dirname, "src"),
       compress: true,
       port: 4200,
-      watchContentBase: true,
-      progress: true,
       hot: true,
       open: true,
       historyApiFallback: true, // Не забудьте про этот параметр, ибо со значением false WDS будет «прямолинейно» обрабатывать ссылки для React Router'а. Т.е. он будет по путь->директория искать index.html, а он у нас один и в корне.
     },
     resolve: config.resolve,
     module: {
-      rules: [config.modules.js, config.modules.stylus],
+      rules: [config.modules.js, config.modules.scss],
     },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
-        template: "./src/Html/Browser.html", // Скармливаем наш HTML-темплейт
+        template: "./public/index.html", // Скармливаем наш HTML-темплейт
       }),
       new WebpackNotifierPlugin({ alwaysNotify: false }),
     ],
     entry: {
-      main: "./src/Client.tsx", // Энтрипоинт-файл, с которого и начнется наша сборка
+      main: "./src/client.tsx", // Энтрипоинт-файл, с которого и начнется наша сборка
     },
     output: {
       filename: watchMode
