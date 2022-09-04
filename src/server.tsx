@@ -4,8 +4,7 @@ import path from "path";
 
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-
-//import App from "../src/App";
+import { AppContainer } from "./ui/App";
 
 const PORT = 8000;
 
@@ -22,7 +21,7 @@ app.use("*", (req, res, next) => {
       data.replace(
         '<div id="root"></div>',
         `<div id="root">${ReactDOMServer.renderToString(
-          <h1>{req.baseUrl} url updated</h1>
+          <AppContainer />
         )}</div>`
       )
     );

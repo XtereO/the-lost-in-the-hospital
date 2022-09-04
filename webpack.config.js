@@ -12,6 +12,10 @@ module.exports = (env) => {
       test: /\.(s(a|c)ss)$/,
       use: ["style-loader", "css-loader", "sass-loader"],
     },
+    file: {
+      test: /\.(png|webP|jpeg)$/,
+      use: ["file-loader"],
+    },
   };
   if (env === "production") {
     modules.scss.use[0] = MiniCssExtractPlugin.loader;

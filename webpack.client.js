@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
     },
     resolve: config.resolve,
     module: {
-      rules: [config.modules.js, config.modules.scss],
+      rules: [config.modules.js, config.modules.scss, config.modules.file],
     },
     plugins: [
       new CleanWebpackPlugin(),
@@ -60,7 +60,7 @@ module.exports = (env, argv) => {
       filename: watchMode
         ? "assets/[name].[hash].js"
         : "assets/[name].[chunkhash].js", // небольшое условие, т.к. WDS не будет работать с chunkhash
-      path: path.resolve(__dirname, "dist"), // Весь наш результат складываем в папку dist
+      path: path.resolve(__dirname, "dist-client"), // Весь наш результат складываем в папку dist
       publicPath: "/",
     },
     performance: {

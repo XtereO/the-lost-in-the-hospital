@@ -20,14 +20,14 @@ module.exports = (env, argv) => {
     ],
     resolve: config.resolve,
     module: {
-      rules: [config.modules.js, config.modules.scss],
+      rules: [config.modules.js, config.modules.scss, config.modules.file],
     },
     entry: {
       main: "./src/server.tsx", // Тут уже энтрипоинт сервера, который сделаем далее
     },
     output: {
-      filename: "[name].js",
-      path: path.resolve(__dirname, "server"), // Все компилируем в папку server
+      filename: "[name].bundle.js",
+      path: path.resolve(__dirname, "dist-server"), // Все компилируем в папку server
     },
     performance: {
       hints: false,
