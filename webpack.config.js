@@ -10,7 +10,7 @@ module.exports = (env) => {
     },
     scss: {
       test: /\.(s(a|c)ss)$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
+      use: ["style-loader", "css-modules-typescript-loader", {loader:"css-loader", options: {modules: true}}, "sass-loader"],
     },
     file: {
       test: /\.(png|webP|jpeg)$/,
@@ -21,7 +21,7 @@ module.exports = (env) => {
     modules.scss.use[0] = MiniCssExtractPlugin.loader;
   }
   const resolve = {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"],
     alias: {
       src: path.resolve(__dirname, "src/"),
     },

@@ -1,10 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { App } from "./App";
+import { AppContainer } from "./App";
 
 describe("Test App component", () => {
   beforeEach(() => {
-    render(<App />);
+    render(<AppContainer />);
   });
   test("Is component rendered", () => {
     expect(screen.getByText("Hello world!")).toBeInTheDocument();
