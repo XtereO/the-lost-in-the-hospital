@@ -4,6 +4,7 @@ export const languages = {
   ru: {
     brandName: "BroToUniverse",
     navLinkProjects: "Проекты",
+    navLinkHome: "Главная",
     navLinkJob: "Работа",
     footerSocTopic: "Мы в соцсетях",
     discord: "Дискорд",
@@ -14,6 +15,7 @@ export const languages = {
   en: {
     brandName: "BroToUniverse",
     navLinkProjects: "Projects",
+    navLinkHome: "Home",
     navLinkJob: "Job",
     footerSocTopic: "We in soc",
     discord: "Discord",

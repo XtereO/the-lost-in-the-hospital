@@ -1,20 +1,22 @@
 .container {
   width: 280px;
   display: flex;
-  justify-items: center;
+  justify-content: center;
+  align-items: center;
   align-self: stretch;
 }
 
-.header_nav_link {
-  opacity: 0.6;
+%text {
   font-size: 32px;
-  transition {
-    property: opacity;
-    delay: 200ms;
-    duration: 500ms;
-    timing-function: ease;
-  }
+  text-decoration: none;
+}
+
+.header_nav_link {
+  @extend %text;
+  opacity: 0.6;
+  transition: 1000ms 100ms ease;
   &__active {
+    @extend %text;
     opacity: 0.9;
   }
   &:hover {

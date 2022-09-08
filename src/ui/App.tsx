@@ -4,16 +4,17 @@ import { HashRouter } from "react-router-dom";
 import { getTheme, getLanguage } from "../bll/main";
 import { store } from "../bll/store";
 import { LanguageContext, ThemeContext, languages, themes } from "../context";
+import { Header } from "./Header";
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
   const language = useSelector(getLanguage);
   return (
-    <div>
+    <div data-testid="app">
       <ThemeContext.Provider value={themes[theme]}>
-        <LanguageContext.Provider
-          value={languages[language]}
-        ></LanguageContext.Provider>
+        <LanguageContext.Provider value={languages[language]}>
+          <Header />
+        </LanguageContext.Provider>
       </ThemeContext.Provider>
     </div>
   );

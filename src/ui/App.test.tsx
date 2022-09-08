@@ -6,7 +6,10 @@ describe("Test App component", () => {
   beforeEach(() => {
     render(<AppContainer />);
   });
-  test("Is component rendered", () => {
-    expect(screen.getByText("Hello world!")).toBeInTheDocument();
+  test("should render App", () => {
+    expect(screen.getByTestId("app"));
+  });
+  test("should render header", () => {
+    expect(screen.getByTestId("header"));
   });
 });

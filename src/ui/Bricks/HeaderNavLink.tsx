@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../../context";
-import styles from "./HeaderNavLink.module.scss";
+import styles from "./HeaderNavLink.scss";
 
 type Props = {
   to: string;
@@ -11,7 +11,7 @@ type Props = {
 export const HeaderNavLink = React.memo<Props>(({ to, children }) => {
   const theme = useContext(ThemeContext);
   return (
-    <div data-testid="header-nav-link-container">
+    <div className={styles.container} data-testid="header-nav-link-container">
       <NavLink
         className={({ isActive }) =>
           isActive ? styles.header_nav_link__active : styles.header_nav_link
