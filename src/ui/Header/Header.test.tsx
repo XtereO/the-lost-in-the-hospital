@@ -22,28 +22,28 @@ describe("Test Header component", () => {
       "rgb(14, 33, 95)"
     );
   });
-  test("should render header__nav_links", () => {
-    expect(screen.getByTestId("header__nav_links")).toBeInTheDocument();
+  test("should render header-nav-links", () => {
+    expect(screen.getByTestId("header-nav-links")).toBeInTheDocument();
   });
-  test("should header__nav_links has a className equal to header__nav_links", () => {
-    expect(screen.getByTestId("header__nav_links").className).toEqual(
+  test("should header-nav-links has a className equal to header__nav_links", () => {
+    expect(screen.getByTestId("header-nav-links").className).toEqual(
       "header__nav_links"
     );
   });
-  test("should header__nav_linkg has a navlink Главная", () => {
+  test("should header-nav-links has a navlink Главная", () => {
     expect(screen.getByText("Главная")).toBeInTheDocument();
   });
-  test("should header__nav_linkg has a navlink Проекты", () => {
+  test("should header-nav-linkg has a navlink Проекты", () => {
     expect(screen.getByText("Проекты")).toBeInTheDocument();
   });
-  test("should header__nav_linkg has a navlink Работа", () => {
+  test("should header-nav-linkg has a navlink Работа", () => {
     expect(screen.getByText("Работа")).toBeInTheDocument();
   });
-  test("should render header__settings", () => {
-    expect(screen.getByTestId("header__settings")).toBeInTheDocument();
+  test("should render header-settings", () => {
+    expect(screen.getByTestId("header-settings")).toBeInTheDocument();
   });
-  test("should header__settings has a className equal to header__settings", () => {
-    expect(screen.getByTestId("header__settings").className).toEqual(
+  test("should header-settings has a className equal to header__settings", () => {
+    expect(screen.getByTestId("header-settings").className).toEqual(
       "header__settings"
     );
   });

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { ThemeContext } from "../../context";
+import { ThemeContext } from "../../../context";
 import styles from "./HeaderNavLink.scss";
 
 type Props = {

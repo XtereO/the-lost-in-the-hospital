@@ -5,12 +5,17 @@ module.exports = (env) => {
   const modules = {
     js: {
       test: /\.ts(x?)$/,
-      include: /src/,
+      exclude: /node_modules/,
       use: ["ts-loader"],
     },
     scss: {
       test: /\.(s(a|c)ss)$/,
-      use: ["style-loader", "css-modules-typescript-loader", {loader:"css-loader", options: {modules: true}}, "sass-loader"],
+      use: [
+        "style-loader",
+        "css-modules-typescript-loader",
+        { loader: "css-loader", options: { modules: true } },
+        "sass-loader",
+      ],
     },
     file: {
       test: /\.(png|webP|jpeg)$/,

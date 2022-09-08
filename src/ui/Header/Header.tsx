@@ -12,14 +12,14 @@ export const Header = React.memo(() => {
       style={{ backgroundColor: theme.header }}
       data-testid="header"
     >
-      <div className={styles.header__nav_links} data-testid="header__nav_links">
+      <div className={styles.header__nav_links} data-testid="header-nav-links">
         <HeaderNavLink to="/home">{text.navLinkHome}</HeaderNavLink>
         <HeaderNavLink to="/projects">{text.navLinkProjects}</HeaderNavLink>
         <HeaderNavLink to="/job">{text.navLinkJob}</HeaderNavLink>
       </div>
       <div
         className={styles.header__settings}
-        data-testid="header__settings"
+        data-testid="header-settings"
       ></div>
     </div>
   );

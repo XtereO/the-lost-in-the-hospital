@@ -4,6 +4,7 @@ const WebpackNotifierPlugin = require("webpack-notifier");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpackConfig = require("./webpack.config");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
   const watchMode = argv.liveReload || false;
@@ -47,6 +48,7 @@ module.exports = (env, argv) => {
       rules: [config.modules.js, config.modules.scss, config.modules.file],
     },
     plugins: [
+      new MiniCssExtractPlugin(),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: "./public/index.html", // Скармливаем наш HTML-темплейт
