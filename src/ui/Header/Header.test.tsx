@@ -2,13 +2,17 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Header } from "./Header";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "../../bll/store";
 
 describe("Test Header component", () => {
   beforeEach(() => {
     render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Header />
+        </BrowserRouter>
+      </Provider>
     );
   });
   test("should render component", () => {
@@ -46,5 +50,11 @@ describe("Test Header component", () => {
     expect(screen.getByTestId("header-settings").className).toEqual(
       "header__settings"
     );
+  });
+  test("should render moon-icon", () => {
+    expect(screen.getByTestId("moon-icon")).toBeInTheDocument();
+  });
+  test("should render language-icon", () => {
+    expect(screen.getByTestId("language-icon")).toBeInTheDocument();
   });
 });

@@ -5,6 +5,7 @@ import { getTheme, getLanguage } from "../bll/main";
 import { store } from "../bll/store";
 import { LanguageContext, ThemeContext, languages, themes } from "../context";
 import { Header } from "./Header";
+import "./App.scss";
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
