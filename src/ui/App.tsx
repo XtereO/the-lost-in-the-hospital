@@ -6,6 +6,7 @@ import { store } from "../bll/store";
 import { LanguageContext, ThemeContext, languages, themes } from "../context";
 import { Header } from "./Header";
 import "./App.scss";
+import { RootRoutes } from "./RootRoutes";
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
@@ -15,6 +16,7 @@ const App = React.memo(() => {
       <ThemeContext.Provider value={themes[theme]}>
         <LanguageContext.Provider value={languages[language]}>
           <Header />
+          <RootRoutes />
         </LanguageContext.Provider>
       </ThemeContext.Provider>
     </div>

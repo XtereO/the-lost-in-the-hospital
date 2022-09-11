@@ -50,7 +50,7 @@
     "start": "webpack-dev-server --config webpack.client.js --mode development",
     "start:ssr": "webpack --config webpack.server.js --mode production && nodemon ./server/main.js",
     "build": "webpack --config webpack.client.js --mode production",
-    "test": "jest --env=jsdom --watch"
+    "test": "jest --env=jsdom --watch-all"
   },
   "browserslist": [
     "last 2 versions"

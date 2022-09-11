@@ -12,4 +12,7 @@ describe("Test App component", () => {
   test("should render header", () => {
     expect(screen.getByTestId("header"));
   });
+  test("should render home", () => {
+    expect(screen.getByTestId("home"));
+  });
 });
