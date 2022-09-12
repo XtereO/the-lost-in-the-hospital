@@ -9,6 +9,11 @@ describe("Test App component", () => {
   test("should render App", () => {
     expect(screen.getByTestId("app"));
   });
+  test("should app has backgroundColor equal to rgb(245, 245, 245)", () => {
+    expect(screen.getByTestId("app").style.backgroundColor).toEqual(
+      "rgb(245, 245, 245)"
+    );
+  });
   test("should render header", () => {
     expect(screen.getByTestId("header"));
   });

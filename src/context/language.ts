@@ -3,6 +3,7 @@ import React from "react";
 export const languages = {
   ru: {
     brandName: "BroToUniverse",
+    bannerDescription: "Команда разработки игр",
     navLinkProjects: "Проекты",
     navLinkHome: "Главная",
     navLinkJob: "Работа",
@@ -14,6 +15,7 @@ export const languages = {
   },
   en: {
     brandName: "BroToUniverse",
+    bannerDescription: "Game developers teamp",
     navLinkProjects: "Projects",
     navLinkHome: "Home",
     navLinkJob: "Job",

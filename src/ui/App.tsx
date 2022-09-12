@@ -12,7 +12,7 @@ const App = React.memo(() => {
   const theme = useSelector(getTheme);
   const language = useSelector(getLanguage);
   return (
-    <div data-testid="app">
+    <div style={{ backgroundColor: themes[theme].appBg }} data-testid="app">
       <ThemeContext.Provider value={themes[theme]}>
         <LanguageContext.Provider value={languages[language]}>
           <Header />

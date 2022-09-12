@@ -30,10 +30,10 @@ describe("Test Button component", () => {
       "transparent"
     );
   });
-  test("should mouseOver rewrite color to transparent", () => {
+  test("should mouseOver rewrite color to rgba(0, 0, 0, 0.9)", () => {
     const btn = screen.getByTestId("btn");
     fireEvent.mouseOver(btn);
-    expect(btn.style.color).toEqual("transparent");
+    expect(btn.style.color).toEqual("rgba(0, 0, 0, 0.9)");
   });
   test("should mouseOut, after mouseOver, rewrite color to rgba(255, 255, 255, 0.9)", () => {
     const btn = screen.getByTestId("btn");
