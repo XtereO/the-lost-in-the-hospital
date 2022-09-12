@@ -2,7 +2,7 @@
 // Please do not change this file!
 interface CssExports {
   'info_block': string;
-  'info_block__descritption': string;
+  'info_block__description': string;
   'info_block__header': string;
 }
 export const cssExports: CssExports;
