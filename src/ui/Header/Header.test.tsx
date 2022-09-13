@@ -21,7 +21,7 @@ describe("Test Header component", () => {
   test("should has a className equal to header", () => {
     expect(screen.getByTestId("header").className).toEqual("header");
   });
-  test("should has a backgroundColor equal to #0E215F", () => {
+  test("should has a backgroundColor equal to rgb(14, 33, 95)", () => {
     expect(screen.getByTestId("header").style.backgroundColor).toEqual(
       "rgb(14, 33, 95)"
     );

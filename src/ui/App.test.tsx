@@ -7,7 +7,10 @@ describe("Test App component", () => {
     render(<AppContainer />);
   });
   test("should render App", () => {
-    expect(screen.getByTestId("app"));
+    expect(screen.getByTestId("app")).toBeInTheDocument();
+  });
+  test("should app has className equal to app", () => {
+    expect(screen.getByTestId("app").className).toEqual("app");
   });
   test("should app has backgroundColor equal to rgb(245, 245, 245)", () => {
     expect(screen.getByTestId("app").style.backgroundColor).toEqual(
@@ -15,9 +18,12 @@ describe("Test App component", () => {
     );
   });
   test("should render header", () => {
-    expect(screen.getByTestId("header"));
+    expect(screen.getByTestId("header")).toBeInTheDocument();
   });
   test("should render home", () => {
-    expect(screen.getByTestId("home"));
+    expect(screen.getByTestId("home")).toBeInTheDocument();
+  });
+  test("should render footer", () => {
+    expect(screen.getByTestId("footer")).toBeInTheDocument();
   });
 });

@@ -20,6 +20,8 @@ export const themes = {
     bannerDescription: "rgba(255, 255, 255, 0.8)",
     infoBlockHeader: "rgb(154, 154, 154)",
     infoBlockDescription: "rgba(0, 0, 0, 0.7)",
+    footerInfoBlockHeader: "rgba(255, 255, 255, 0.9)",
+    footerLink: "rgba(255, 255, 255, 0.8)",
   },
   dark: {
     appBg: "#F5F5F5",
@@ -40,6 +42,8 @@ export const themes = {
     bannerDescription: "rgba(255, 255, 255, 0.8)",
     infoBlockHeader: "rgb(154, 154, 154)",
     infoBlockDescription: "rgba(0, 0, 0, 0.7)",
+    footerInfoBlockHeader: "rgba(255,255,255,0.9)",
+    footerLink: "rgba(255, 255, 255, 0.8)",
   },
 };
 

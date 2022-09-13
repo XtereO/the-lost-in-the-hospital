@@ -1,0 +1,17 @@
+%text {
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer_nav_link {
+  @extend %text;
+  opacity: 0.8;
+  transition: 500ms 100ms ease;
+  &__active {
+    @extend %text;
+    opacity: 0.9;
+  }
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -7,15 +7,22 @@ export const languages = {
     navLinkProjects: "Проекты",
     navLinkHome: "Главная",
     navLinkJob: "Работа",
-    footerSocTopic: "Мы в соцсетях",
-    discord: "Дискорд",
-    telegram: "Телеграм",
-    vkontakte: "ВКонтакте",
-    gameTheLostInTheHospital: "The Lost In The Hospital",
+    footerSocTopic: "Контакты",
     infoBlocks: [
       { header: "О нас", description: "Тут много текста" },
       { header: "Topic 2", description: "There's a lot of text" },
       { header: "Topic 3", description: "There's a lot of text" },
+    ],
+    contacts: [
+      { title: "Дискорд", link: "" },
+      { title: "Телеграм", link: "" },
+      { title: "ВКонтакте", link: "" },
+    ],
+    projects: [
+      {
+        title: "The Lost In The Hospital",
+        link: "/projects/the-lost-in-the-hospital",
+      },
     ],
   },
   en: {
@@ -24,15 +31,22 @@ export const languages = {
     navLinkProjects: "Projects",
     navLinkHome: "Home",
     navLinkJob: "Job",
-    footerSocTopic: "We in soc",
-    discord: "Discord",
-    telegram: "Telegram",
-    vkontakte: "VKontakte",
-    gameTheLostInTheHospital: "The Lost In The Hospital",
+    footerSocTopic: "Contacts",
     infoBlocks: [
       { header: "About us", description: "There's a lot of text" },
       { header: "Topic 2", description: "There's a lot of text" },
       { header: "Topic 3", description: "There's a lot of text" },
+    ],
+    contacts: [
+      { title: "Discord", link: "" },
+      { title: "Telegram", link: "" },
+      { title: "VKontakte", link: "" },
+    ],
+    projects: [
+      {
+        title: "The Lost In The Hospital",
+        link: "/projects/the-lost-in-the-hospital",
+      },
     ],
   },
 };

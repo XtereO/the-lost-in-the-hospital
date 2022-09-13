@@ -1,0 +1,9 @@
+.footer_info_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4px;
+  &__header {
+    font-size: 32px;
+  }
+}

@@ -5,18 +5,24 @@ import { getTheme, getLanguage } from "../bll/main";
 import { store } from "../bll/store";
 import { LanguageContext, ThemeContext, languages, themes } from "../context";
 import { Header } from "./Header";
-import "./App.scss";
+import styles from "./App.scss";
 import { RootRoutes } from "./RootRoutes";
+import { Footer } from "./Footer";
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
   const language = useSelector(getLanguage);
   return (
-    <div style={{ backgroundColor: themes[theme].appBg }} data-testid="app">
+    <div
+      className={styles.app}
+      style={{ backgroundColor: themes[theme].appBg }}
+      data-testid="app"
+    >
       <ThemeContext.Provider value={themes[theme]}>
         <LanguageContext.Provider value={languages[language]}>
           <Header />
           <RootRoutes />
+          <Footer />
         </LanguageContext.Provider>
       </ThemeContext.Provider>
     </div>
