@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { FooterNavLink } from "./FooterNavLink";
@@ -23,9 +23,9 @@ describe("Test FooterNavLink component", () => {
   test("should render children", () => {
     expect(screen.getByText("Job")).toBeInTheDocument();
   });
-  test("should has color equal to rgba(255, 255, 255, 0.8)", () => {
+  test("should has color equal to rgba(255, 255, 255, 0.5)", () => {
     expect(screen.getByTestId("footer-nav-link").style.color).toEqual(
-      "rgba(255, 255, 255, 0.8)"
+      "rgba(255, 255, 255, 0.5)"
     );
   });
   test("should has a className equal to footer_nav_link", () => {
@@ -33,14 +33,15 @@ describe("Test FooterNavLink component", () => {
       "footer_nav_link"
     );
   });
-  test("should render footer-link", () => {
-    render(
-      <BrowserRouter>
-        <FooterNavLink to="https://job.com" isLink>
-          Job
-        </FooterNavLink>
-      </BrowserRouter>
-    );
-    expect(screen.getByTestId("footer-link")).toBeInTheDocument();
+  test("should handle mouse over and set color to rgba(255, 255, 255, 0.8)", () => {
+    const navLink = screen.getByTestId("footer-nav-link");
+    fireEvent.mouseOver(navLink);
+    expect(navLink.style.color).toEqual("rgba(255, 255, 255, 0.8)");
+  });
+  test("should handle mouse out and set color to rgba(255, 255, 255, 0.5)", () => {
+    const navLink = screen.getByTestId("footer-nav-link");
+    fireEvent.mouseOver(navLink);
+    fireEvent.mouseOut(navLink);
+    expect(navLink.style.color).toEqual("rgba(255, 255, 255, 0.5)");
   });
 });
