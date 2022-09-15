@@ -10,7 +10,7 @@ export const RootRoutes = React.memo(() => {
       <Route data-testid="route-job" path="/job" element={<Job />} />
       <Route
         data-testid="route-projects"
-        path="/projects"
+        path="/projects/:productLink"
         element={<Projects />}
       />
       <Route data-testid="route-home" path="*" element={<Home />} />

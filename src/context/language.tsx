@@ -1,4 +1,5 @@
 import React from "react";
+import { Project } from "../types";
 
 export const languages = {
   ru: {
@@ -17,12 +18,6 @@ export const languages = {
       { title: "Дискорд", href: "" },
       { title: "Телеграм", href: "" },
       { title: "ВКонтакте", href: "" },
-    ],
-    projects: [
-      {
-        title: "The Lost In The Hospital",
-        to: "/projects/the-lost-in-the-hospital",
-      },
     ],
     jobs: [
       {
@@ -51,6 +46,31 @@ export const languages = {
           "В задачи будет входить Разработка геймплея, игровых механик.",
       },
     ],
+    projects: [
+      {
+        genre: "Хорроры",
+        products: [
+          {
+            title: "The Lost In The Hospital",
+            to: "/projects/the-lost-in-the-hospital",
+            topics: [
+              { title: "Сюжет", hash: "plot" },
+              {
+                title: "Механики",
+                hash: "mechanicks",
+                subTopics: [
+                  {
+                    title: "Моргание",
+                    hash: "blinking",
+                    description: <div>super</div>,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ] as Project[],
   },
   en: {
     brandName: "BroToUniverse",
@@ -68,12 +88,6 @@ export const languages = {
       { title: "Discord", href: "" },
       { title: "Telegram", href: "" },
       { title: "VKontakte", href: "" },
-    ],
-    projects: [
-      {
-        title: "The Lost In The Hospital",
-        to: "/projects/the-lost-in-the-hospital",
-      },
     ],
     jobs: [
       {
@@ -102,6 +116,31 @@ export const languages = {
           "В задачи будет входить Разработка геймплея, игровых механик.",
       },
     ],
+    projects: [
+      {
+        genre: "Хорроры",
+        products: [
+          {
+            title: "The Lost In The Hospital",
+            to: "/projects/the-lost-in-the-hospital",
+            topics: [
+              { title: "Сюжет", hash: "plot" },
+              {
+                title: "Механики",
+                hash: "mechanicks",
+                subTopics: [
+                  {
+                    title: "Моргание",
+                    hash: "blinking",
+                    description: <div>super</div>,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ] as Project[],
   },
 };
 

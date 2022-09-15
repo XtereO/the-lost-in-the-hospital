@@ -17,11 +17,13 @@ export const Footer = React.memo(() => {
         <img src={brandLogo} data-testid="brand-logo" />
       </FooterInfoBlock>
       <FooterInfoBlock header={text.navLinkProjects}>
-        {text.projects.map((t) => (
-          <FooterNavLink key={t.title} to={t.to}>
-            {t.title}
-          </FooterNavLink>
-        ))}
+        {text.projects
+          .reduce((acc, p) => (acc = [...acc, ...p.products]), [])
+          .map((p) => (
+            <FooterNavLink key={p.title} to={p.to}>
+              {p.title}
+            </FooterNavLink>
+          ))}
       </FooterInfoBlock>
       <FooterInfoBlock header={text.footerSocTopic}>
         {text.contacts.map((t) => (

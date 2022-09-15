@@ -18,7 +18,9 @@ export const Header = React.memo(() => {
     >
       <div className={styles.header__nav_links} data-testid="header-nav-links">
         <HeaderNavLink to="/home">{text.navLinkHome}</HeaderNavLink>
-        <HeaderNavLink to="/projects">{text.navLinkProjects}</HeaderNavLink>
+        <HeaderNavLink to={text.projects[0].products[0].to}>
+          {text.navLinkProjects}
+        </HeaderNavLink>
         <HeaderNavLink to="/job">{text.navLinkJob}</HeaderNavLink>
       </div>
       <div className={styles.header__settings} data-testid="header-settings">
