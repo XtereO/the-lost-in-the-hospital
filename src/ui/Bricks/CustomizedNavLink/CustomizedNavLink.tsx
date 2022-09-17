@@ -1,8 +1,9 @@
 import React, { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./Link.scss";
+import styles from "./CustomizedNavLink.scss";
 
 type Props = {
+  fontSize: number;
   color: string;
   activeColor: string;
   to: string;
@@ -10,13 +11,13 @@ type Props = {
 };
 
 export const CustomizedNavLink = React.memo<Props>(
-  ({ color, activeColor, to, children }) => {
-    const [style, setStyle] = useState({ color });
+  ({ color, activeColor, to, children, fontSize }) => {
+    const [style, setStyle] = useState({ color, fontSize });
     const handleMouseOver = useCallback(() => {
-      setStyle({ color: activeColor });
+      setStyle((prev) => ({ ...prev, color: activeColor }));
     }, []);
     const handleMouseOut = useCallback(() => {
-      setStyle({ color });
+      setStyle((prev) => ({ ...prev, color }));
     }, []);
     return (
       <div>
@@ -24,8 +25,10 @@ export const CustomizedNavLink = React.memo<Props>(
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
           target="blank"
-          data-testid="link"
-          style={style}
+          data-testid="nav-link"
+          style={({ isActive }) =>
+            isActive ? { color: activeColor, fontSize } : style
+          }
           to={to}
           className={styles.nav_link}
         >
