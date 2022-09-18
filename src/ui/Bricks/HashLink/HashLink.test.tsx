@@ -40,9 +40,19 @@ describe("Test HashLink component", () => {
     fireEvent.mouseOut(hashLink);
     expect(hashLink.style.color).toEqual("rgba(0, 0, 0, 0.6)");
   });
-  test("should handle assign hash and set color to rgba(0, 0, 0, 0.8)", () => {
-    window.location.assign("game");
-    expect(screen.getByTestId("hash-link").style.color).toEqual(
+  test("should handle prop isActive and set color to rgba(0, 0, 0, 0.8)", () => {
+    render(
+      <HashLink
+        isActive
+        hash="game"
+        fontSize={14}
+        color={"rgba(0, 0, 0, 0.6)"}
+        activeColor={"rgba(0, 0, 0, 0.8)"}
+      >
+        Game
+      </HashLink>
+    );
+    expect(screen.getAllByTestId("hash-link")[1].style.color).toEqual(
       "rgba(0, 0, 0, 0.8)"
     );
   });
