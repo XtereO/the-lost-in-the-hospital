@@ -3,20 +3,20 @@ export type Project = {
   products: Product[];
 };
 
-type Product = {
+export type Product = {
   title: string;
   to: string;
   topics: Topic[];
 };
 
-type Topic = {
+export type Topic = {
   title: string;
   hash: string;
   description?: React.ReactNode;
   subTopics: SubTopic[];
 };
 
-type SubTopic = {
+export type SubTopic = {
   title: string;
   hash: string;
   description: React.ReactNode;

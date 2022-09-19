@@ -1,0 +1,15 @@
+%flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.navigation_block {
+  @extend %flex;
+  row-gap: 17px;
+  &__genre {
+    font-size: 32px;
+  }
+  &__nav_links {
+    @extend %flex;
+    row-gap: 15px;
+  }
+}

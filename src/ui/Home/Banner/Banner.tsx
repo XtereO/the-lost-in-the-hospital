@@ -1,8 +1,8 @@
 import React, { useCallback, useContext } from "react";
-import { Button } from "../../Bricks";
-import { ThemeContext, LanguageContext } from "../../../context";
-import styles from "./Banner.scss";
 import { useNavigate } from "react-router-dom";
+import { LanguageContext, ThemeContext } from "../../../context";
+import { Button } from "../../Bricks";
+import styles from "./Banner.scss";
 
 export const Banner = React.memo(() => {
   const text = useContext(LanguageContext);
@@ -12,7 +12,7 @@ export const Banner = React.memo(() => {
     navigate("/job");
   }, []);
   const handleProjectsClick = useCallback(() => {
-    navigate("/projects");
+    navigate(text.projects[0].products[0].to);
   }, []);
   return (
     <div

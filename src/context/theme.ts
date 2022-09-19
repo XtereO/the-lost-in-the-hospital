@@ -28,6 +28,10 @@ export const themes = {
     jobCardText: "rgba(0, 0, 0, 0.8)",
     jobCardLink: "rgba(0, 0, 0, 0.6)",
     jobCardLinkActive: "rgba(0, 0, 0, 0.8)",
+    projectsNavigationBorderColor: "rgb(154, 154, 154)",
+    projectsNavigationBlockGenre: "rgb(0, 0, 0)",
+    projectsNavigationBlockNavLink: "rgb(0, 0, 0, 0.6)",
+    projectsNavigationBlockNavLinkActive: "rgb(0, 0, 0, 0.8)",
   },
   dark: {
     appBg: "#F5F5F5",
@@ -56,6 +60,10 @@ export const themes = {
     jobCardText: "rgba(0, 0, 0, 0.8)",
     jobCardLink: "rgba(0, 0, 0, 0.6)",
     jobCardLinkActive: "rgba(0, 0, 0, 0.8)",
+    projectsNavigationBorderColor: "rgb(154, 154, 154)",
+    projectsNavigationBlockGenre: "rgb(0, 0, 0)",
+    projectsNavigationBlockNavLink: "rgb(0, 0, 0, 0.6)",
+    projectsNavigationBlockNavLinkActive: "rgb(0, 0, 0, 0.8)",
   },
 };
 

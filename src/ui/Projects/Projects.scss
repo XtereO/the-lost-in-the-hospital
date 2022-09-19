@@ -1,0 +1,14 @@
+.projects {
+  display: flex;
+  justify-items: row;
+  &__navigation {
+    padding: 20px;
+    position: fixed;
+    top: 145px;
+    left: 0;
+    border-right-width: 1px;
+    border-right-style: solid;
+    overflow-y: auto;
+    height: 100vh;
+  }
+}

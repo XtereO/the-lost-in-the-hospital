@@ -1,4 +1,4 @@
-import { fireEvent, screen, render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Banner } from "./Banner";
@@ -82,7 +82,9 @@ describe("Test Banner component", () => {
   });
   test("should button projects navigate to /projects", () => {
     fireEvent.click(screen.getByText("Проекты"));
-    expect(window.location.pathname).toEqual("/projects");
+    expect(window.location.pathname).toEqual(
+      "/projects/the-lost-in-the-hospital"
+    );
   });
   test("should button job navigate to /job", () => {
     fireEvent.click(screen.getByText("Работа"));
