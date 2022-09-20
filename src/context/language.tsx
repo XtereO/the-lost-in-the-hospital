@@ -54,7 +54,7 @@ export const languages = {
             title: "The Lost In The Hospital",
             to: "/projects/the-lost-in-the-hospital",
             topics: [
-              { title: "Сюжет", hash: "plot" },
+              { title: "Сюжет", hash: "plot", subTopics: [] },
               {
                 title: "Механики",
                 hash: "mechanicks",

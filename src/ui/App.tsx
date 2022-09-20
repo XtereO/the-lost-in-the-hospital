@@ -1,13 +1,13 @@
 import React from "react";
 import { Provider, useSelector } from "react-redux";
-import { HashRouter } from "react-router-dom";
-import { getTheme, getLanguage } from "../bll/main";
+import { BrowserRouter } from "react-router-dom";
+import { getLanguage, getTheme } from "../bll/main";
 import { store } from "../bll/store";
-import { LanguageContext, ThemeContext, languages, themes } from "../context";
-import { Header } from "./Header";
+import { LanguageContext, languages, ThemeContext, themes } from "../context";
 import styles from "./App.scss";
-import { RootRoutes } from "./RootRoutes";
 import { Footer } from "./Footer";
+import { Header } from "./Header";
+import { RootRoutes } from "./RootRoutes";
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
@@ -31,10 +31,10 @@ const App = React.memo(() => {
 
 export const AppContainer = React.memo(() => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
-    </HashRouter>
+    </BrowserRouter>
   );
 });

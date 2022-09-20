@@ -32,6 +32,9 @@ export const themes = {
     projectsNavigationBlockGenre: "rgb(0, 0, 0)",
     projectsNavigationBlockNavLink: "rgb(0, 0, 0, 0.6)",
     projectsNavigationBlockNavLinkActive: "rgb(0, 0, 0, 0.8)",
+    projectsContentTopicTitle: "rgba(0, 0, 0, 0.9)",
+    projectsContentSubTopicTitle: "rgba(0, 0, 0, 0.9)",
+    projectsContentText: "rgba(0, 0, 0, 0.8)",
   },
   dark: {
     appBg: "#F5F5F5",
@@ -64,6 +67,9 @@ export const themes = {
     projectsNavigationBlockGenre: "rgb(0, 0, 0)",
     projectsNavigationBlockNavLink: "rgb(0, 0, 0, 0.6)",
     projectsNavigationBlockNavLinkActive: "rgb(0, 0, 0, 0.8)",
+    projectsContentTopicTitle: "rgba(0, 0, 0, 0.9)",
+    projectsContentSubTopicTitle: "rgba(0, 0, 0, 0.9)",
+    projectsContentText: "rgba(0, 0, 0, 0.8)",
   },
 };
 

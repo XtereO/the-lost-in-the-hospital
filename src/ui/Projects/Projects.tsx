@@ -1,11 +1,54 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext, useEffect, useMemo } from "react";
+import { useLocation } from "react-router-dom";
 import { LanguageContext, ThemeContext } from "../../context";
+import { SubTopic, Topic as TopicType } from "../../types";
 import { NavigationBlock } from "./NavigationBlock";
 import styles from "./Projects.scss";
+import { Topic } from "./Topic";
 
 export const Projects = React.memo(() => {
   const theme = useContext(ThemeContext);
   const text = useContext(LanguageContext);
+  const location = useLocation();
+  const product = useMemo(
+    () =>
+      text.projects
+        .reduce((acc, project) => (acc = [...acc, ...project.products]), [])
+        .filter((product) => location.pathname.includes(product.to))[0],
+    [location.pathname]
+  );
+  const topics = useMemo(
+    () =>
+      product
+        ? product.topics.map((t: TopicType) => ({
+            ...t,
+            ref: React.createRef(),
+            subTopics: t.subTopics.map((s: SubTopic) => ({
+              ...s,
+              ref: React.createRef(),
+            })),
+          }))
+        : [],
+    [product]
+  );
+
+  const handleHashChange = useCallback(() => {
+    topics
+      .reduce(
+        (acc: SubTopic[], t: TopicType) =>
+          (acc = [...acc, t as SubTopic, ...t.subTopics]),
+        []
+      )
+      .filter(
+        (t: SubTopic & { ref: HTMLDivElement }) => t.hash === location.hash
+      )[0]
+      .ref.current.scrollIntoView({ behavior: "smooth" });
+  }, [topics]);
+  useEffect(() => {
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
   return (
     <div className={styles.projects} data-testid="projects">
       <div
@@ -21,7 +64,13 @@ export const Projects = React.memo(() => {
           />
         ))}
       </div>
-      <div data-testid="projects-content"></div>
+      <div className={styles.projects__content} data-testid="projects-content">
+        {topics.map(
+          (t: TopicType & { ref: React.RefObject<HTMLDivElement> }) => (
+            <Topic topic={t} ref={t.ref} />
+          )
+        )}
+      </div>
       <div data-testid="projects-product-navigation"></div>
     </div>
   );

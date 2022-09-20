@@ -1,6 +1,8 @@
 .projects {
   display: flex;
   justify-items: row;
+  padding-top: 145px;
+  overflow-y: auto;
   &__navigation {
     padding: 20px;
     position: fixed;
@@ -10,5 +12,8 @@
     border-right-style: solid;
     overflow-y: auto;
     height: 100vh;
+  }
+  &__content {
+    padding: 50px;
   }
 }

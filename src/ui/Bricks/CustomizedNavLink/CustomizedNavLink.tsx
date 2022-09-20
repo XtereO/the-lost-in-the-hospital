@@ -24,7 +24,6 @@ export const CustomizedNavLink = React.memo<Props>(
         <NavLink
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
-          target="blank"
           data-testid="nav-link"
           style={({ isActive }) =>
             isActive ? { color: activeColor, fontSize } : style

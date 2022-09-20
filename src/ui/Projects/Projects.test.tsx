@@ -38,4 +38,9 @@ describe("Test Projects component", () => {
       screen.getByTestId("projects-product-navigation")
     ).toBeInTheDocument();
   });
+  test("should projects-content has className equal to projects__content", () => {
+    expect(screen.getByTestId("projects-content").className).toEqual(
+      "projects__content"
+    );
+  });
 });
