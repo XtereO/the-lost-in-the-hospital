@@ -2,18 +2,23 @@
   display: flex;
   justify-items: row;
   padding-top: 145px;
-  overflow-y: auto;
+  row-gap: 30px;
   &__navigation {
+    width: 326px;
     padding: 20px;
-    position: fixed;
-    top: 145px;
-    left: 0;
     border-right-width: 1px;
     border-right-style: solid;
     overflow-y: auto;
-    height: 100vh;
   }
   &__content {
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
     padding: 50px;
+    width: calc(100% - 652px);
+  }
+  &__product_navigation {
+    width: 326px;
+    overflow-y: auto;
+    padding: 20px;
   }
 }

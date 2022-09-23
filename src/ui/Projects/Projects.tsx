@@ -40,14 +40,16 @@ export const Projects = React.memo(() => {
         []
       )
       .filter(
-        (t: SubTopic & { ref: HTMLDivElement }) => t.hash === location.hash
+        (t: SubTopic & { ref: HTMLDivElement }) =>
+          t.hash === location.hash.slice(1)
       )[0]
       .ref.current.scrollIntoView({ behavior: "smooth" });
   }, [topics]);
   useEffect(() => {
+    window.removeEventListener("hashchange", handleHashChange);
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+  }, [topics]);
 
   return (
     <div className={styles.projects} data-testid="projects">
@@ -67,11 +69,14 @@ export const Projects = React.memo(() => {
       <div className={styles.projects__content} data-testid="projects-content">
         {topics.map(
           (t: TopicType & { ref: React.RefObject<HTMLDivElement> }) => (
-            <Topic topic={t} ref={t.ref} />
+            <Topic key={t.title} topic={t} ref={t.ref} />
           )
         )}
       </div>
-      <div data-testid="projects-product-navigation"></div>
+      <div
+        className={styles.projects__product_navigation}
+        data-testid="projects-product-navigation"
+      ></div>
     </div>
   );
 });

@@ -6,6 +6,13 @@ import { Topic } from "./Topic";
 describe("Test Topic component", () => {
   const topic = languages.en.projects[0].products[0].topics[1];
   beforeEach(() => {
+    const mockIntersectionObserver = jest.fn();
+    mockIntersectionObserver.mockReturnValue({
+      observe: jest.fn().mockReturnValue(null),
+      unobserve: jest.fn().mockReturnValue(null),
+      disconnect: jest.fn().mockReturnValue(null),
+    });
+    window.IntersectionObserver = mockIntersectionObserver;
     render(<Topic topic={topic} />);
   });
   test("should render component", () => {

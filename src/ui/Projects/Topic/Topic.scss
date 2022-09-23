@@ -1,12 +1,11 @@
 %flex {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh-200px);
-  row-gap: 10px;
+  min-height: calc(100vh - 200px);
+  padding-top: 10px;
 }
 .topic {
   @extend %flex;
-  padding: 10px;
   &__title {
     font-size: 32px;
   }

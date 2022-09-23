@@ -43,4 +43,9 @@ describe("Test Projects component", () => {
       "projects__content"
     );
   });
+  test("should projects-product-navigation has className equal to projects__product_navigation", () => {
+    expect(screen.getByTestId("projects-product-navigation").className).toEqual(
+      "projects__product_navigation"
+    );
+  });
 });

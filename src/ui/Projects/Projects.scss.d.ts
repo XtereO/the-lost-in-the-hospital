@@ -4,6 +4,7 @@ interface CssExports {
   'projects': string;
   'projects__content': string;
   'projects__navigation': string;
+  'projects__product_navigation': string;
 }
 export const cssExports: CssExports;
 export default cssExports;

@@ -38,7 +38,8 @@ export const Topic = React.memo(
           </div>
         </div>
         {topic.subTopics.map((s) => (
-          <SubTopic key={s.hash} subTopic={s} />
+          //@ts-ignore
+          <SubTopic ref={s.ref} key={s.hash} subTopic={s} />
         ))}
       </div>
     );
