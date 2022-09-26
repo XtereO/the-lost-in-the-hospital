@@ -46,6 +46,7 @@ export const languages = {
           "В задачи будет входить Разработка геймплея, игровых механик.",
       },
     ],
+    navigation: "Навигация",
     projects: [
       {
         genre: "Хорроры",
@@ -116,6 +117,7 @@ export const languages = {
           "В задачи будет входить Разработка геймплея, игровых механик.",
       },
     ],
+    navigation: "Navigation",
     projects: [
       {
         genre: "Хорроры",

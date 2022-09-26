@@ -35,6 +35,9 @@ export const themes = {
     projectsContentTopicTitle: "rgba(0, 0, 0, 0.9)",
     projectsContentSubTopicTitle: "rgba(0, 0, 0, 0.9)",
     projectsContentText: "rgba(0, 0, 0, 0.8)",
+    projectsProductNavigationBlockHeader: "rgb(0, 0, 0)",
+    projectsProductNavigationBlockHashLink: "rgba(75, 85, 99, 0.6)",
+    projectsProductNavigationBlockHashLinkActive: "rgba(75, 85, 99, 0.9)",
   },
   dark: {
     appBg: "#F5F5F5",
@@ -70,6 +73,9 @@ export const themes = {
     projectsContentTopicTitle: "rgba(0, 0, 0, 0.9)",
     projectsContentSubTopicTitle: "rgba(0, 0, 0, 0.9)",
     projectsContentText: "rgba(0, 0, 0, 0.8)",
+    projectsProductNavigationBlockHeader: "rgb(0, 0, 0)",
+    projectsProductNavigationBlockHashLink: "rgba(75, 85, 99, 0.6)",
+    projectsProductNavigationBlockHashLinkActive: "rgba(75, 85, 99, 0.9)",
   },
 };
 

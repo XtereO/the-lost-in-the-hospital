@@ -48,4 +48,17 @@ describe("Test Projects component", () => {
       "projects__product_navigation"
     );
   });
+  test("should render projects-product-navigation-header", () => {
+    expect(
+      screen.getByTestId("projects-product-navigation-header")
+    ).toBeInTheDocument();
+  });
+  test("should projects-product-navigation-header's text equal to 'Навигация'", () => {
+    expect(screen.getByText("Навигация")).toBeInTheDocument();
+  });
+  test("should projects-product-navigation-header's className equal to projects__product_navigation__header", () => {
+    expect(screen.getByTestId("projects-product-navigation-header")).toEqual(
+      "projects__product_navigation__header"
+    );
+  });
 });

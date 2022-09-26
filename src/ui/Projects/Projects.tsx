@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { LanguageContext, ThemeContext } from "../../context";
 import { SubTopic, Topic as TopicType } from "../../types";
 import { NavigationBlock } from "./NavigationBlock";
+import { ProductNavigationBlock } from "./ProductNavigationBlock";
 import styles from "./Projects.scss";
 import { Topic } from "./Topic";
 
@@ -76,7 +77,16 @@ export const Projects = React.memo(() => {
       <div
         className={styles.projects__product_navigation}
         data-testid="projects-product-navigation"
-      ></div>
+      >
+        <div data-testid="projects-product-navigation-header">
+          {text.navigation}
+        </div>
+        <div>
+          {topics.map((t: TopicType) => (
+            <ProductNavigationBlock topic={t} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 });
