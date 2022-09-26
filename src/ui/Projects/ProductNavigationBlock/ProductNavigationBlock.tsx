@@ -12,11 +12,11 @@ type Props = {
 export const ProductNavigationBlock = React.memo<Props>(({ topic }) => {
   const theme = useContext(ThemeContext);
   const location = useLocation();
+  console.log(location.hash);
+  const hash = useMemo(() => location.hash.slice(1), [location.hash]);
   const isTopicActive = useMemo(
-    () =>
-      topic.subTopics.some((s) => s.hash === location.hash) ||
-      location.hash === topic.hash,
-    [location.hash, topic.hash, topic.subTopics]
+    () => topic.subTopics.some((s) => s.hash === hash) || hash === topic.hash,
+    [hash, topic.hash, topic.subTopics]
   );
   return (
     <div
@@ -55,7 +55,7 @@ export const ProductNavigationBlock = React.memo<Props>(({ topic }) => {
         {topic.subTopics.map((s) => (
           <div key={s.hash}>
             <HashLink
-              isActive={location.hash === s.hash}
+              isActive={hash === s.hash}
               fontSize={24}
               hash={s.hash}
               color={theme.projectsProductNavigationBlockHashLink}

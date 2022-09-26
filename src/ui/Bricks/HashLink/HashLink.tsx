@@ -20,7 +20,7 @@ export const HashLink = React.memo<Props>(
     }, [color]);
 
     const handleClick = useCallback(() => {
-      window.location.assign(hash);
+      history.pushState(null, null, `#${hash}`);
     }, [hash]);
 
     return (
