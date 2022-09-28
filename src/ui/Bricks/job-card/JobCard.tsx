@@ -15,27 +15,27 @@ export const JobCard = React.memo<Props>(({ header, description }) => {
     <div
       data-testid="job-card"
       className={styles.job_card}
-      style={{ backgroundColor: theme.jobCardBackground }}
+      style={{ backgroundColor: theme.job.cardBackground }}
     >
       <div
         data-testid="job-card-header"
         className={styles.job_card__header}
-        style={{ color: theme.jobCardHeader }}
+        style={{ color: theme.job.cardHeader }}
       >
         {header}
       </div>
       <div
         data-testid="job-card-description"
         className={styles.job_card__description}
-        style={{ color: theme.jobCardText }}
+        style={{ color: theme.job.cardText }}
       >
         {description}
       </div>
       <div data-testid="job-card-links" className={styles.job_card__links}>
         {text.contacts.map((t) => (
           <CustomizedLink
-            color={theme.jobCardLink}
-            activeColor={theme.jobCardLinkActive}
+            color={theme.job.cardLink}
+            activeColor={theme.job.cardLinkActive}
             href={t.href}
             key={t.title}
           >

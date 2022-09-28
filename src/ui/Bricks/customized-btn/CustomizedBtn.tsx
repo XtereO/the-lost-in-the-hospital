@@ -10,22 +10,22 @@ type Props = {
 export const CustomizedBtn = React.memo<Props>(({ children, onClick }) => {
   const theme = useContext(ThemeContext);
   const [style, setStyle] = useState({
-    color: theme.btnLight,
-    borderColor: theme.btnLight,
-    backgroundColor: theme.btnLightBackground,
+    color: theme.btnLight.color,
+    borderColor: theme.btnLight.color,
+    backgroundColor: theme.btnLight.background,
   });
   const handleMouseOver = useCallback(() => {
     setStyle({
-      color: theme.btnLightActive,
-      borderColor: theme.btnLightActive,
-      backgroundColor: theme.btnLightActiveBackground,
+      color: theme.btnLight.colorActive,
+      borderColor: theme.btnLight.colorActive,
+      backgroundColor: theme.btnLight.backgroundActive,
     });
   }, []);
   const handleMouseOut = useCallback(() => {
     setStyle({
-      color: theme.btnLight,
-      borderColor: theme.btnLight,
-      backgroundColor: theme.btnLightBackground,
+      color: theme.btnLight.color,
+      borderColor: theme.btnLight.color,
+      backgroundColor: theme.btnLight.backgroundActive,
     });
   }, []);
   return (

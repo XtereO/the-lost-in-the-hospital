@@ -30,7 +30,7 @@ const App = React.memo(() => {
   return (
     <div
       className={styles.app}
-      style={{ backgroundColor: themes[theme].appBg }}
+      style={{ backgroundColor: themes[theme].app.background }}
       data-testid="app"
     >
       <ThemeContext.Provider value={themes[theme]}>

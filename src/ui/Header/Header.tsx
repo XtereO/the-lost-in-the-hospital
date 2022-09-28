@@ -13,7 +13,7 @@ export const Header = React.memo(() => {
   return (
     <div
       className={styles.header}
-      style={{ backgroundColor: theme.header }}
+      style={{ backgroundColor: theme.header.background }}
       data-testid="header"
     >
       <div className={styles.header__nav_links} data-testid="header-nav-links">

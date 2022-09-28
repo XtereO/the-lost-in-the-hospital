@@ -17,19 +17,19 @@ export const Banner = React.memo(() => {
   return (
     <div
       className={styles.banner}
-      style={{ backgroundColor: theme.bannerBg }}
+      style={{ backgroundColor: theme.banner.background }}
       data-testid="banner"
     >
       <div className={styles.banner__container} data-testid="banner-container">
         <div
-          style={{ color: theme.bannerHeader }}
+          style={{ color: theme.banner.header }}
           className={styles.banner__container__header}
           data-testid="banner-container-header"
         >
           {text.brandName}
         </div>
         <div
-          style={{ color: theme.bannerDescription }}
+          style={{ color: theme.banner.description }}
           className={styles.banner__container__description}
           data-testid="banner-container-description"
         >

@@ -31,8 +31,8 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
         <div
           style={{
             backgroundColor: isTopicActive
-              ? theme.projectsProductNavigationBlockHashLinkActive
-              : theme.projectsProductNavigationBlockHashLink,
+              ? theme.projects.productNavBlock.hashLinkActive
+              : theme.projects.productNavBlock.hashLink,
           }}
           className={styles.product_navigation_block__topic__ellipse}
           data-testid="product-navigation-block-topic-ellipse"
@@ -42,8 +42,8 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
             isActive={isTopicActive}
             hash={topic.hash}
             fontSize={30}
-            color={theme.projectsProductNavigationBlockHashLink}
-            activeColor={theme.projectsProductNavigationBlockHashLinkActive}
+            color={theme.projects.productNavBlock.hashLink}
+            activeColor={theme.projects.productNavBlock.hashLinkActive}
           >
             {topic.title}
           </HashLink>
@@ -59,8 +59,8 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
               isActive={activeHash === s.hash}
               fontSize={24}
               hash={s.hash}
-              color={theme.projectsProductNavigationBlockHashLink}
-              activeColor={theme.projectsProductNavigationBlockHashLinkActive}
+              color={theme.projects.productNavBlock.hashLink}
+              activeColor={theme.projects.productNavBlock.hashLinkActive}
             >
               {s.title}
             </HashLink>

@@ -9,7 +9,7 @@ export const Footer = React.memo(() => {
   const theme = useContext(ThemeContext);
   return (
     <div
-      style={{ backgroundColor: theme.footer }}
+      style={{ backgroundColor: theme.footer.background }}
       className={styles.footer}
       data-testid="footer"
     >
@@ -30,8 +30,8 @@ export const Footer = React.memo(() => {
           <CustomizedLink
             key={t.title}
             href={t.href}
-            color={theme.footerLink}
-            activeColor={theme.footerLinkActive}
+            color={theme.footer.link}
+            activeColor={theme.footer.linkActive}
           >
             {t.title}
           </CustomizedLink>

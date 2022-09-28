@@ -13,7 +13,7 @@ export const NavBlock = React.memo<Props>(({ genre, products }) => {
   return (
     <div className={styles.navigation_block} data-testid="navigation-block">
       <p
-        style={{ color: theme.projectsNavigationBlockGenre }}
+        style={{ color: theme.projects.navBlock.genre }}
         className={styles.navigation_block__genre}
         data-testid="navigation-block-genre"
       >
@@ -27,8 +27,8 @@ export const NavBlock = React.memo<Props>(({ genre, products }) => {
           <CustomizedNavLink
             key={product.title}
             fontSize={24}
-            color={theme.projectsNavigationBlockNavLink}
-            activeColor={theme.projectsNavigationBlockNavLinkActive}
+            color={theme.projects.navBlock.navLink}
+            activeColor={theme.projects.navBlock.navLinkActive}
             to={product.to}
           >
             {product.title}

@@ -12,7 +12,7 @@ export const FooterInfoBlock = React.memo<Props>(({ header, children }) => {
   return (
     <div className={styles.footer_info_block} data-testid="footer-info-block">
       <div
-        style={{ color: theme.footerInfoBlockHeader }}
+        style={{ color: theme.footer.infoBlockHeader }}
         className={styles.footer_info_block__header}
         data-testid="footer-info-block-header"
       >

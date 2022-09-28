@@ -14,8 +14,8 @@ export const FooterNavLink = React.memo<Props>(({ to, children }) => {
       <CustomizedNavLink
         fontSize={24}
         to={to}
-        color={theme.footerLink}
-        activeColor={theme.footerLinkActive}
+        color={theme.footer.link}
+        activeColor={theme.footer.linkActive}
       >
         {children}
       </CustomizedNavLink>

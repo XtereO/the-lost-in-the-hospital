@@ -64,7 +64,7 @@ export const Projects = React.memo(() => {
     <div className={styles.projects} data-testid="projects">
       <div
         className={styles.projects__navigation}
-        style={{ borderRightColor: theme.projectsNavigationBorderColor }}
+        style={{ borderRightColor: theme.projects.navBlock.borderColor }}
         data-testid="projects-navigation"
       >
         {text.projects.map((p) => (

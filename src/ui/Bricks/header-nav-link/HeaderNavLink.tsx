@@ -13,8 +13,8 @@ export const HeaderNavLink = React.memo<Props>(({ to, children }) => {
   return (
     <div className={styles.container} data-testid="header-nav-link-container">
       <CustomizedNavLink
-        color={theme.navLink}
-        activeColor={theme.navLinkActive}
+        color={theme.header.navLink}
+        activeColor={theme.header.navLinkActive}
         fontSize={32}
         to={to}
       >

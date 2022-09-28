@@ -12,14 +12,14 @@ export const InfoBlock = React.memo<Props>(({ header, description }) => {
   return (
     <div className={styles.info_block} data-testid="info-block">
       <div
-        style={{ color: theme.infoBlockHeader }}
+        style={{ color: theme.infoBlock.header }}
         className={styles.info_block__header}
         data-testid="info-block-header"
       >
         {header}
       </div>
       <div
-        style={{ color: theme.infoBlockDescription }}
+        style={{ color: theme.infoBlock.description }}
         className={styles.info_block__description}
         data-testid="info-block-description"
       >
