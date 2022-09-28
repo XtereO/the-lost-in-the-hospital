@@ -1,0 +1,12 @@
+.info_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 305px;
+  &__header {
+    font-size: 30px;
+  }
+  &__description {
+    font-size: 24px;
+  }
+}
