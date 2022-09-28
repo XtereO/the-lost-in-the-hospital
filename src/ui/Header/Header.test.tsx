@@ -1,9 +1,9 @@
-import React from "react";
+import { store } from "@core/store";
 import { render, screen } from "@testing-library/react";
-import { Header } from "./Header";
-import { BrowserRouter } from "react-router-dom";
+import React from "react";
 import { Provider } from "react-redux";
-import { store } from "../../bll/store";
+import { BrowserRouter } from "react-router-dom";
+import { Header } from "./Header";
 
 describe("Test Header component", () => {
   beforeEach(() => {

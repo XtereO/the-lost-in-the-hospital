@@ -1,7 +1,7 @@
+import { LanguageContext, ThemeContext } from "@core/context";
+import { CustomizedBtn } from "@ui/bricks";
 import React, { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { LanguageContext, ThemeContext } from "../../../context";
-import { Button } from "../../Bricks";
 import styles from "./Banner.scss";
 
 export const Banner = React.memo(() => {
@@ -39,8 +39,12 @@ export const Banner = React.memo(() => {
           className={styles.banner__container__button_group}
           data-testid="banner-container-button-group"
         >
-          <Button onClick={handleProjectsClick}>{text.navLinkProjects}</Button>
-          <Button onClick={handleJobClick}>{text.navLinkJob}</Button>
+          <CustomizedBtn onClick={handleProjectsClick}>
+            {text.navLinkProjects}
+          </CustomizedBtn>
+          <CustomizedBtn onClick={handleJobClick}>
+            {text.navLinkJob}
+          </CustomizedBtn>
         </div>
       </div>
     </div>

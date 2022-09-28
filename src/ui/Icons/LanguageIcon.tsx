@@ -1,5 +1,5 @@
+import { ThemeContext } from "@core/context";
 import React, { useContext } from "react";
-import { ThemeContext } from "../../context";
 
 export const LanguageIcon = React.memo(() => {
   const theme = useContext(ThemeContext);

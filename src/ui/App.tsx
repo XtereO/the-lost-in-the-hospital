@@ -1,13 +1,28 @@
+import {
+  LanguageContext,
+  languages,
+  ThemeContext,
+  themes,
+} from "@core/context";
+import { getLanguage, getTheme } from "@core/modules/main";
+import { store } from "@core/store";
+import { Footer } from "@ui/footer";
+import { Header } from "@ui/header";
+import { RootRoutes } from "@ui/root-routes";
 import React from "react";
 import { Provider, useSelector } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { getLanguage, getTheme } from "../bll/main";
-import { store } from "../bll/store";
-import { LanguageContext, languages, ThemeContext, themes } from "../context";
 import styles from "./App.scss";
-import { Footer } from "./Footer";
-import { Header } from "./Header";
-import { RootRoutes } from "./RootRoutes";
+
+export const AppContainer = React.memo(() => {
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  );
+});
 
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
@@ -26,15 +41,5 @@ const App = React.memo(() => {
         </LanguageContext.Provider>
       </ThemeContext.Provider>
     </div>
-  );
-});
-
-export const AppContainer = React.memo(() => {
-  return (
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
   );
 });

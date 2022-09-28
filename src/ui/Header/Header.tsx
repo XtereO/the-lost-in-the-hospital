@@ -1,10 +1,10 @@
+import { LanguageContext, ThemeContext } from "@core/context";
+import { getTheme } from "@core/modules/main";
+import { HeaderIcon, HeaderNavLink } from "@ui/bricks";
+import { LanguageIcon, MoonIcon, SunIcon } from "@ui/icons";
 import React, { useContext } from "react";
-import { HeaderNavLink, HeaderIcon } from "../Bricks";
-import { LanguageContext, ThemeContext } from "../../context";
-import styles from "./Header.scss";
-import { LanguageIcon, MoonIcon, SunIcon } from "../Icons";
 import { useSelector } from "react-redux";
-import { getTheme } from "../../bll/main";
+import styles from "./Header.scss";
 
 export const Header = React.memo(() => {
   const themeType = useSelector(getTheme);

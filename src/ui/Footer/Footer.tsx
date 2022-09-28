@@ -1,8 +1,8 @@
+import brandLogo from "@assets/brand-logo.webp";
+import { LanguageContext, ThemeContext } from "@core/context";
+import { CustomizedLink, FooterInfoBlock, FooterNavLink } from "@ui/bricks";
 import React, { useContext } from "react";
-import { FooterInfoBlock, FooterNavLink, Link } from "../Bricks";
-import { LanguageContext, ThemeContext } from "../../context";
 import styles from "./Footer.scss";
-import brandLogo from "../../assets/brand-logo.webp";
 
 export const Footer = React.memo(() => {
   const text = useContext(LanguageContext);
@@ -27,14 +27,14 @@ export const Footer = React.memo(() => {
       </FooterInfoBlock>
       <FooterInfoBlock header={text.footerSocTopic}>
         {text.contacts.map((t) => (
-          <Link
+          <CustomizedLink
             key={t.title}
             href={t.href}
             color={theme.footerLink}
             activeColor={theme.footerLinkActive}
           >
             {t.title}
-          </Link>
+          </CustomizedLink>
         ))}
       </FooterInfoBlock>
     </div>

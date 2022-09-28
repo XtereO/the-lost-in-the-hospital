@@ -1,7 +1,7 @@
+import { ThemeContext } from "@core/context";
+import { SubTopic as SubTopicType, Topic as TopicType } from "@core/models";
 import React, { useContext, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { ThemeContext } from "../../../context";
-import { SubTopic as SubTopicType, Topic as TopicType } from "../../../types";
 import styles from "./Topic.scss";
 
 type Props = {
@@ -15,6 +15,7 @@ export const Topic = React.memo(
     useEffect(() => {
       if (inView) {
         history.pushState(null, null, `#${topic.hash}`);
+        window.dispatchEvent(new HashChangeEvent("hashchange"));
       }
     }, [inView]);
 

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { languages } from "../../../context";
+import { languages } from "../../../core/context";
 import { Topic } from "./Topic";
 
 describe("Test Topic component", () => {

@@ -1,6 +1,6 @@
+import { LanguageContext } from "@core/context";
+import { JobCard } from "@ui/bricks";
 import React, { useContext } from "react";
-import { JobCard } from "../Bricks";
-import { LanguageContext } from "../../context";
 import styles from "./Job.scss";
 
 export const Job = React.memo(() => {

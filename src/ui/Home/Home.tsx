@@ -1,7 +1,7 @@
+import { LanguageContext } from "@core/context";
+import { InfoBlock } from "@ui/bricks";
 import React, { useContext } from "react";
-import { InfoBlock } from "../Bricks";
-import { LanguageContext } from "../../context";
-import { Banner } from "./Banner";
+import { Banner } from "./banner";
 import styles from "./Home.scss";
 
 export const Home = React.memo(() => {

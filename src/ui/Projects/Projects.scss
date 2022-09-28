@@ -1,8 +1,7 @@
 %flex_column {
   display: flex;
   flex-direction: column;
-  column-gap: 20px;
-  justify-content: space-evenly;
+  row-gap: 30px;
 }
 .projects {
   display: flex;

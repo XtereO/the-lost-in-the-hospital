@@ -1,21 +1,29 @@
-import React, { useCallback, useContext, useEffect, useMemo } from "react";
+import { LanguageContext, ThemeContext } from "@core/context";
+import { SubTopic, Topic as TopicType } from "@core/models";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useLocation } from "react-router-dom";
-import { LanguageContext, ThemeContext } from "../../context";
-import { SubTopic, Topic as TopicType } from "../../types";
-import { NavigationBlock } from "./NavigationBlock";
-import { ProductNavigationBlock } from "./ProductNavigationBlock";
+import { NavBlock } from "./nav-block";
+import { ProductNavBlock } from "./product-nav-block";
 import styles from "./Projects.scss";
-import { Topic } from "./Topic";
+import { Topic } from "./topic";
 
 export const Projects = React.memo(() => {
   const theme = useContext(ThemeContext);
   const text = useContext(LanguageContext);
+
   const location = useLocation();
   const product = useMemo(
     () =>
       text.projects
         .reduce((acc, project) => (acc = [...acc, ...project.products]), [])
-        .filter((product) => location.pathname.includes(product.to))[0],
+        .filter((product) => location.pathname.includes(product.to))[0] ??
+      text.projects[0],
     [location.pathname]
   );
   const topics = useMemo(
@@ -33,17 +41,17 @@ export const Projects = React.memo(() => {
     [product]
   );
 
+  const [activeHash, setActiveHash] = useState(location.hash);
   const handleHashChange = useCallback(() => {
+    const hash = window.location.hash.slice(1);
+    setActiveHash(hash);
     topics
       .reduce(
         (acc: SubTopic[], t: TopicType) =>
           (acc = [...acc, t as SubTopic, ...t.subTopics]),
         []
       )
-      .filter(
-        (t: SubTopic & { ref: HTMLDivElement }) =>
-          t.hash === location.hash.slice(1)
-      )[0]
+      .filter((t: SubTopic & { ref: HTMLDivElement }) => t.hash === hash)[0]
       .ref.current.scrollIntoView({ behavior: "smooth" });
   }, [topics]);
   useEffect(() => {
@@ -60,11 +68,7 @@ export const Projects = React.memo(() => {
         data-testid="projects-navigation"
       >
         {text.projects.map((p) => (
-          <NavigationBlock
-            key={p.genre}
-            genre={p.genre}
-            products={p.products}
-          />
+          <NavBlock key={p.genre} genre={p.genre} products={p.products} />
         ))}
       </div>
       <div className={styles.projects__content} data-testid="projects-content">
@@ -78,12 +82,15 @@ export const Projects = React.memo(() => {
         className={styles.projects__product_navigation}
         data-testid="projects-product-navigation"
       >
-        <div data-testid="projects-product-navigation-header">
+        <div
+          className={styles.projects__product_navigation__header}
+          data-testid="projects-product-navigation-header"
+        >
           {text.navigation}
         </div>
         <div>
           {topics.map((t: TopicType) => (
-            <ProductNavigationBlock topic={t} />
+            <ProductNavBlock topic={t} activeHash={activeHash} />
           ))}
         </div>
       </div>
