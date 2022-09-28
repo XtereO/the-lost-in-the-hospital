@@ -2,7 +2,7 @@ import { ThemeContext } from "@core/context";
 import { Topic } from "@core/models/types";
 import { HashLink } from "@ui/bricks";
 import React, { useContext, useMemo } from "react";
-import styles from "./ProductNavigationBlock.scss";
+import styles from "./ProductNavBlock.scss";
 
 type Props = {
   topic: Topic;
@@ -19,7 +19,6 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
     [activeHash, topic.hash, topic.subTopics]
   );
 
-  console.log(activeHash, isTopicActive);
   return (
     <div
       className={styles.product_navigation_block}

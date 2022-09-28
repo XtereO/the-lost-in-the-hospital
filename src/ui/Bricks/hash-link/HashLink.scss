@@ -1,0 +1,6 @@
+.hash_link {
+  transition: 500ms 100ms ease;
+  &:hover {
+    cursor: pointer;
+  }
+}

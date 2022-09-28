@@ -1,7 +1,7 @@
 import { ThemeContext } from "@core/context";
 import { CustomizedNavLink } from "@ui/bricks";
 import React, { useContext } from "react";
-import styles from "./NavigationBlock.scss";
+import styles from "./NavBlock.scss";
 
 type Props = {
   genre: string;

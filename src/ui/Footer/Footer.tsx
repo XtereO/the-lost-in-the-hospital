@@ -1,4 +1,4 @@
-import brandLogo from "@assets/brand-logo.webp";
+import brandLogo from "@assets/images/brand-logo.webp";
 import { LanguageContext, ThemeContext } from "@core/context";
 import { CustomizedLink, FooterInfoBlock, FooterNavLink } from "@ui/bricks";
 import React, { useContext } from "react";

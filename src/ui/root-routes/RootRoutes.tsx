@@ -1,5 +1,5 @@
 import { Home } from "@ui/home";
-import { Job } from "@ui/Job";
+import { Job } from "@ui/job";
 import { Projects } from "@ui/projects";
 import React from "react";
 import { Route, Routes } from "react-router-dom";

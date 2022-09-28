@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import styles from "./HashLink.scss";
 
 type Props = {
   isActive?: boolean;
@@ -26,6 +27,7 @@ export const HashLink = React.memo<Props>(
 
     return (
       <span
+        className={styles.hash_link}
         onClick={handleClick}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}

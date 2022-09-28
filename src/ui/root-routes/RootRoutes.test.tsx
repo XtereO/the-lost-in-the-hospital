@@ -1,7 +1,7 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { RootRoutes } from "./RootRoutes";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { RootRoutes } from "./RootRoutes";
 
 describe("Test RootRoutes component", () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe("Test RootRoutes component", () => {
       </BrowserRouter>
     );
   });
-  test("should render home", () => {
+  test("render home", () => {
     expect(screen.getByTestId("home"));
   });
 });

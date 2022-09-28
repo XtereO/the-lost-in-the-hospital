@@ -11,7 +11,7 @@ describe("Test FooterNavLink component", () => {
       </BrowserRouter>
     );
   });
-  test("should render component", () => {
+  test("render component", () => {
     expect(screen.getByTestId("nav-link")).toBeInTheDocument();
   });
 });

@@ -23,7 +23,7 @@ export const Projects = React.memo(() => {
       text.projects
         .reduce((acc, project) => (acc = [...acc, ...project.products]), [])
         .filter((product) => location.pathname.includes(product.to))[0] ??
-      text.projects[0],
+      text.projects[0].products[0],
     [location.pathname]
   );
   const topics = useMemo(
@@ -90,7 +90,7 @@ export const Projects = React.memo(() => {
         </div>
         <div>
           {topics.map((t: TopicType) => (
-            <ProductNavBlock topic={t} activeHash={activeHash} />
+            <ProductNavBlock key={t.title} topic={t} activeHash={activeHash} />
           ))}
         </div>
       </div>

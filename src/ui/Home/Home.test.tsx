@@ -11,16 +11,16 @@ describe("Test Home component", () => {
       </BrowserRouter>
     );
   });
-  test("should render component", () => {
+  test("render component", () => {
     expect(screen.getByTestId("home")).toBeInTheDocument();
   });
-  test("should render banner", () => {
+  test("render banner", () => {
     expect(screen.getByTestId("banner")).toBeInTheDocument();
   });
-  test("should render info-blocks", () => {
+  test("render info-blocks", () => {
     expect(screen.getByTestId("info-blocks")).toBeInTheDocument();
   });
-  test("should info-blocks has className equal to info_blocks", () => {
+  test("info-blocks has className equal to info_blocks", () => {
     expect(screen.getByTestId("info-blocks").className).toEqual("info_blocks");
   });
 });

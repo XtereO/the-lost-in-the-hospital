@@ -18,35 +18,35 @@ describe("Test CustomizedNavLink component", () => {
       </BrowserRouter>
     );
   });
-  test("should render component", () => {
+  test("render component", () => {
     expect(screen.getByTestId("nav-link")).toBeInTheDocument();
   });
-  test("should nav-link has className equal to nav_link", () => {
+  test("nav-link has className equal to nav_link", () => {
     expect(screen.getByTestId("nav-link").className).toEqual("nav_link");
   });
-  test("should nav-link has text equal to Job", () => {
+  test("nav-link has text equal to Job", () => {
     expect(screen.getByText("Job")).toBeInTheDocument();
   });
-  test("should nav-link has fontSize equal to 14", () => {
+  test("nav-link has fontSize equal to 14", () => {
     expect(screen.getByTestId("nav-link").style.fontSize).toEqual("14px");
   });
-  test("should nav-link has color equal to rgba(0, 0, 0, 0.6)", () => {
+  test("nav-link has color equal to rgba(0, 0, 0, 0.6)", () => {
     expect(screen.getByTestId("nav-link").style.color).toEqual(
       "rgba(0, 0, 0, 0.6)"
     );
   });
-  test("should nav-link has href equal to http://localhost/job", () => {
+  test("nav-link has href equal to http://localhost/job", () => {
     expect(screen.getByTestId("nav-link")).toHaveProperty(
       "href",
       "http://localhost/job"
     );
   });
-  test("should handle mouse over and set color to rgba(0, 0, 0, 0.8)", () => {
+  test("handle mouse over and set color to rgba(0, 0, 0, 0.8)", () => {
     const navLink = screen.getByTestId("nav-link");
     fireEvent.mouseOver(navLink);
     expect(navLink.style.color).toEqual("rgba(0, 0, 0, 0.8)");
   });
-  test("should handle mouse out and set color to rgba(0, 0, 0, 0.6)", () => {
+  test("handle mouse out and set color to rgba(0, 0, 0, 0.6)", () => {
     const navLink = screen.getByTestId("nav-link");
     fireEvent.mouseOver(navLink);
     fireEvent.mouseOut(navLink);

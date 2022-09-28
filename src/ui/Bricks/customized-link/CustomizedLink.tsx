@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import styles from "./Link.scss";
+import styles from "./CustomizedLink.scss";
 
 type Props = {
   color: string;

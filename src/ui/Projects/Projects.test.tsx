@@ -5,60 +5,67 @@ import { Projects } from "./Projects";
 
 describe("Test Projects component", () => {
   beforeEach(() => {
+    const mockIntersectionObserver = jest.fn();
+    mockIntersectionObserver.mockReturnValue({
+      observe: jest.fn().mockReturnValue(null),
+      unobserve: jest.fn().mockReturnValue(null),
+      disconnect: jest.fn().mockReturnValue(null),
+    });
+    window.IntersectionObserver = mockIntersectionObserver;
     render(
       <BrowserRouter>
         <Projects />
       </BrowserRouter>
     );
   });
-  test("should render component", () => {
+  test("render component", () => {
     expect(screen.getByTestId("projects")).toBeInTheDocument();
   });
-  test("should projects has className equal to projects", () => {
+  test("projects has className equal to projects", () => {
     expect(screen.getByTestId("projects").className).toEqual("projects");
   });
-  test("should render projects-navigation", () => {
+  test("render projects-navigation", () => {
     expect(screen.getByTestId("projects-navigation")).toBeInTheDocument();
   });
-  test("should projects-navigation has className equal to projects__navigation", () => {
+  test("projects-navigation has className equal to projects__navigation", () => {
     expect(screen.getByTestId("projects-navigation").className).toEqual(
       "projects__navigation"
     );
   });
-  test("should projects-navigation has borderLeftColor equal rgb(154, 154, 154)", () => {
+  test("projects-navigation has borderLeftColor equal rgb(154, 154, 154)", () => {
     expect(
       screen.getByTestId("projects-navigation").style.borderRightColor
     ).toEqual("rgb(154, 154, 154)");
   });
-  test("should render projects-content", () => {
+  test("render projects-content", () => {
     expect(screen.getByTestId("projects-content")).toBeInTheDocument();
   });
-  test("should render projects-product-navigation", () => {
+  test("render projects-product-navigation", () => {
     expect(
       screen.getByTestId("projects-product-navigation")
     ).toBeInTheDocument();
   });
-  test("should projects-content has className equal to projects__content", () => {
+  test("projects-content has className equal to projects__content", () => {
     expect(screen.getByTestId("projects-content").className).toEqual(
       "projects__content"
     );
   });
-  test("should projects-product-navigation has className equal to projects__product_navigation", () => {
+  test("projects-product-navigation has className equal to projects__product_navigation", () => {
     expect(screen.getByTestId("projects-product-navigation").className).toEqual(
       "projects__product_navigation"
     );
   });
-  test("should render projects-product-navigation-header", () => {
+  test("render projects-product-navigation-header", () => {
     expect(
       screen.getByTestId("projects-product-navigation-header")
     ).toBeInTheDocument();
   });
-  test("should projects-product-navigation-header's text equal to 'Навигация'", () => {
+  test("projects-product-navigation-header's text equal to 'Навигация'", () => {
     expect(screen.getByText("Навигация")).toBeInTheDocument();
   });
-  test("should projects-product-navigation-header's className equal to projects__product_navigation__header", () => {
-    expect(screen.getByTestId("projects-product-navigation-header")).toEqual(
-      "projects__product_navigation__header"
-    );
+  test("projects-product-navigation-header's className equal to projects__product_navigation__header", () => {
+    expect(
+      screen.getByTestId("projects-product-navigation-header").className
+    ).toEqual("projects__product_navigation__header");
   });
 });

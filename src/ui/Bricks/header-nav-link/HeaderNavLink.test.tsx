@@ -11,15 +11,15 @@ describe("Test HeaderNavLink component", () => {
       </BrowserRouter>
     );
   });
-  test("should render component", () => {
+  test("render component", () => {
     expect(screen.getByTestId("header-nav-link-container")).toBeInTheDocument();
   });
-  test("should header-nav-link-container className equal to container", () => {
+  test("header-nav-link-container className equal to container", () => {
     expect(screen.getByTestId("header-nav-link-container").className).toEqual(
       "container"
     );
   });
-  test("should render nav-link", () => {
+  test("render nav-link", () => {
     expect(screen.getByTestId("nav-link")).toBeInTheDocument();
   });
 });
