@@ -1,3 +1,4 @@
+$path_to_inter: "../assets/fonts/Inter/";
 body {
   margin: 0;
   width: 100%;
@@ -8,4 +9,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+}
+
+@font-face {
+  font-family: Inter SemiBold;
+  src: url($path_to_inter + "SemiBold.ttf");
+}
+@font-face {
+  font-family: Inter Bold;
+  src: url($path_to_inter + "Bold.ttf");
+}
+@font-face {
+  font-family: Inter Regular;
+  src: url($path_to_inter + "Regular.ttf");
+}
+@font-face {
+  font-family: Inter Medium;
+  src: url($path_to_inter + "Medium.ttf");
 }

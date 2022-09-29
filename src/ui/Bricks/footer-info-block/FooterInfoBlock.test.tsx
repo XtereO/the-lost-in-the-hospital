@@ -33,6 +33,11 @@ describe("Test FooterInfoBlock component", () => {
   test("render footer-info-block-details", () => {
     expect(screen.getByTestId("footer-info-block-details")).toBeInTheDocument();
   });
+  test("footer-info-block-details's className equal to footer_info_block__details", () => {
+    expect(screen.getByTestId("footer-info-block-details").className).toEqual(
+      "footer_info_block__details"
+    );
+  });
   test("footer-info-block-details has text equal to 'Discord'", () => {
     expect(screen.getByText("Discord")).toBeInTheDocument();
   });

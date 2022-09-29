@@ -7,6 +7,7 @@
 .product_navigation_block {
   @extend %flex;
   &__topic {
+    font-family: Inter Medium;
     display: flex;
     flex-direction: row;
     column-gap: 30px;
@@ -20,6 +21,7 @@
   }
   &__subtopics {
     @extend %flex;
+    font-family: Inter Regular;
     padding-left: 70px;
   }
 }

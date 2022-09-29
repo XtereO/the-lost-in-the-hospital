@@ -25,7 +25,7 @@ export const CustomizedBtn = React.memo<Props>(({ children, onClick }) => {
     setStyle({
       color: theme.btnLight.color,
       borderColor: theme.btnLight.color,
-      backgroundColor: theme.btnLight.backgroundActive,
+      backgroundColor: theme.btnLight.background,
     });
   }, []);
   return (

@@ -7,9 +7,11 @@
   row-gap: 10px;
   &__genre {
     font-size: 32px;
+    font-family: Inter Medium;
   }
   &__nav_links {
     @extend %flex;
     row-gap: 15px;
+    font-family: Inter Regular;
   }
 }

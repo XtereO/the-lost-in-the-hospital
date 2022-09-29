@@ -1,6 +1,7 @@
 import { ThemeContext } from "@core/context";
 import { CustomizedNavLink } from "@ui/bricks/customized-nav-link";
 import React, { useContext } from "react";
+import styles from "./FooterNavLink.scss";
 
 type Props = {
   to: string;
@@ -10,7 +11,10 @@ type Props = {
 export const FooterNavLink = React.memo<Props>(({ to, children }) => {
   const theme = useContext(ThemeContext);
   return (
-    <div data-testid="footer-nav-link-container">
+    <div
+      className={styles.footer_nav_link}
+      data-testid="footer-nav-link-container"
+    >
       <CustomizedNavLink
         fontSize={24}
         to={to}
