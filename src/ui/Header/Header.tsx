@@ -10,6 +10,7 @@ export const Header = React.memo(() => {
   const themeType = useSelector(getTheme);
   const theme = useContext(ThemeContext);
   const text = useContext(LanguageContext);
+
   return (
     <div
       className={styles.header}

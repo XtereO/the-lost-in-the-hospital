@@ -9,7 +9,7 @@ import { store } from "@core/store";
 import { Footer } from "@ui/footer";
 import { Header } from "@ui/header";
 import { RootRoutes } from "@ui/root-routes";
-import React from "react";
+import React, { UIEvent, useCallback, useState } from "react";
 import { Provider, useSelector } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import styles from "./App.scss";
@@ -27,8 +27,23 @@ export const AppContainer = React.memo(() => {
 const App = React.memo(() => {
   const theme = useSelector(getTheme);
   const language = useSelector(getLanguage);
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const scrollHandler = useCallback(
+    (e: UIEvent<HTMLDivElement>) => {
+      const curScrollPos = e.currentTarget.clientTop;
+      console.log(curScrollPos, prevScrollPos);
+      if (curScrollPos - prevScrollPos > 0) {
+      } else {
+      }
+      setPrevScrollPos(curScrollPos);
+    },
+    [prevScrollPos]
+  );
+
   return (
     <div
+      onScroll={scrollHandler}
       className={styles.app}
       style={{ backgroundColor: themes[theme].app.background }}
       data-testid="app"
