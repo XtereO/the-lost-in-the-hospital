@@ -41,7 +41,7 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
           <HashLink
             isActive={isTopicActive}
             hash={topic.hash}
-            fontSize={30}
+            fontSize={24}
             color={theme.projects.productNavBlock.hashLink}
             activeColor={theme.projects.productNavBlock.hashLinkActive}
           >
@@ -57,7 +57,7 @@ export const ProductNavBlock = React.memo<Props>(({ topic, activeHash }) => {
           <div key={s.hash}>
             <HashLink
               isActive={activeHash === s.hash}
-              fontSize={24}
+              fontSize={18}
               hash={s.hash}
               color={theme.projects.productNavBlock.hashLink}
               activeColor={theme.projects.productNavBlock.hashLinkActive}

@@ -26,7 +26,7 @@ export const NavBlock = React.memo<Props>(({ genre, products }) => {
         {products.map((product) => (
           <CustomizedNavLink
             key={product.title}
-            fontSize={24}
+            fontSize={18}
             color={theme.projects.navBlock.navLink}
             activeColor={theme.projects.navBlock.navLinkActive}
             to={product.to}

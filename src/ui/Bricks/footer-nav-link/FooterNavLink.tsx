@@ -16,7 +16,7 @@ export const FooterNavLink = React.memo<Props>(({ to, children }) => {
       data-testid="footer-nav-link-container"
     >
       <CustomizedNavLink
-        fontSize={24}
+        fontSize={18}
         to={to}
         color={theme.footer.link}
         activeColor={theme.footer.linkActive}

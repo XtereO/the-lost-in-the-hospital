@@ -1,13 +1,13 @@
 %flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .header {
   @extend %flex;
+  justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 50px;
   position: fixed;
   left: 0;
   top: 0;
@@ -21,8 +21,8 @@
   }
   &__settings {
     @extend %flex;
-    flex-basis: 140px;
-    column-gap: 30px;
-    padding-right: 30px;
+    flex-basis: 100px;
+    column-gap: 20px;
+    padding-right: 20px;
   }
 }

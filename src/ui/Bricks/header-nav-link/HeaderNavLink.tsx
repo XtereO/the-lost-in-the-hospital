@@ -15,7 +15,7 @@ export const HeaderNavLink = React.memo<Props>(({ to, children }) => {
       <CustomizedNavLink
         color={theme.header.navLink}
         activeColor={theme.header.navLinkActive}
-        fontSize={32}
+        fontSize={22}
         to={to}
       >
         {children}

@@ -5,7 +5,7 @@ $a: auto;
   max-width: 100%;
   overflow-x: $a;
   padding: {
-    top: 160px;
+    top: 110px;
     bottom: 60px;
   }
   &__container {
@@ -14,12 +14,12 @@ $a: auto;
     min-width: 460px;
     width: 75%;
     &__header {
-      font-size: 64px;
+      font-size: 48px;
       font-family: Inter Bold;
     }
     &__description {
       margin-top: 24px;
-      font-size: 32px;
+      font-size: 24px;
       font-family: Inter Regular;
     }
     &__button_group {
