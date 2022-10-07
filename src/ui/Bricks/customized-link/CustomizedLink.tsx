@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from "react";
+import { useMouse } from "@core/hooks";
+import React from "react";
 import styles from "./CustomizedLink.scss";
 
 type Props = {
@@ -10,13 +11,11 @@ type Props = {
 
 export const CustomizedLink = React.memo<Props>(
   ({ color, activeColor, href, children }) => {
-    const [style, setStyle] = useState({ color });
-    const handleMouseOver = useCallback(() => {
-      setStyle({ color: activeColor });
-    }, []);
-    const handleMouseOut = useCallback(() => {
-      setStyle({ color });
-    }, []);
+    const { style, handleMouseOut, handleMouseOver } = useMouse({
+      defaultStyle: { color },
+      activeStyle: { color: activeColor },
+    });
+
     return (
       <div>
         <a

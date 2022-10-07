@@ -10,6 +10,7 @@ type Props = {
 
 export const FooterNavLink = React.memo<Props>(({ to, children }) => {
   const theme = useContext(ThemeContext);
+
   return (
     <div
       className={styles.footer_nav_link}
@@ -18,8 +19,8 @@ export const FooterNavLink = React.memo<Props>(({ to, children }) => {
       <CustomizedNavLink
         fontSize={18}
         to={to}
-        color={theme.footer.link}
-        activeColor={theme.footer.linkActive}
+        color={theme.footer.link.default}
+        activeColor={theme.footer.link.active}
       >
         {children}
       </CustomizedNavLink>

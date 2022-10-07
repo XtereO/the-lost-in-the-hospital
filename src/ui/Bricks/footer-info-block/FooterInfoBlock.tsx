@@ -9,6 +9,7 @@ type Props = {
 
 export const FooterInfoBlock = React.memo<Props>(({ header, children }) => {
   const theme = useContext(ThemeContext);
+
   return (
     <div className={styles.footer_info_block} data-testid="footer-info-block">
       <div

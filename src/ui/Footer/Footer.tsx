@@ -7,6 +7,7 @@ import styles from "./Footer.scss";
 export const Footer = React.memo(() => {
   const text = useContext(LanguageContext);
   const theme = useContext(ThemeContext);
+
   return (
     <div
       style={{ backgroundColor: theme.footer.background }}
@@ -30,8 +31,8 @@ export const Footer = React.memo(() => {
           <CustomizedLink
             key={t.title}
             href={t.href}
-            color={theme.footer.link}
-            activeColor={theme.footer.linkActive}
+            color={theme.footer.link.default}
+            activeColor={theme.footer.link.active}
           >
             {t.title}
           </CustomizedLink>

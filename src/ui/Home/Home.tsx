@@ -6,6 +6,7 @@ import styles from "./Home.scss";
 
 export const Home = React.memo(() => {
   const text = useContext(LanguageContext);
+
   return (
     <div data-testid="home">
       <Banner />

@@ -1,27 +1,27 @@
 import { ThemeContext } from "@core/context";
 import { useMouse } from "@core/hooks";
 import React, { useContext } from "react";
-import styles from "./CustomizedBtn.scss";
+import styles from "./IconBtn.scss";
 
 type Props = {
   onClick: () => void;
   children: React.ReactNode;
 };
 
-export const CustomizedBtn = React.memo<Props>(({ children, onClick }) => {
+export const IconBtn = React.memo<Props>(({ onClick, children }) => {
   const theme = useContext(ThemeContext);
   const { style, handleMouseOut, handleMouseOver } = useMouse({
-    defaultStyle: theme.btnLight.default,
-    activeStyle: theme.btnLight.active,
+    defaultStyle: theme.iconBtn.default,
+    activeStyle: theme.iconBtn.active,
   });
 
   return (
     <button
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
+      data-testid="icon-btn"
       style={style}
-      className={styles.btn}
-      data-testid="btn"
+      onMouseOut={handleMouseOut}
+      onMouseOver={handleMouseOver}
+      className={styles.icon_btn}
       onClick={onClick}
     >
       {children}

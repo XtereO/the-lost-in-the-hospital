@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from "react";
+import { useMouse } from "@core/hooks";
+import React, { useCallback } from "react";
 import styles from "./HashLink.scss";
 
 type Props = {
@@ -12,13 +13,10 @@ type Props = {
 
 export const HashLink = React.memo<Props>(
   ({ hash, isActive, fontSize, color, activeColor, children }) => {
-    const [style, setStyle] = useState({ color, fontSize });
-    const handleMouseOver = useCallback(() => {
-      setStyle((prev) => ({ ...prev, color: activeColor }));
-    }, [activeColor]);
-    const handleMouseOut = useCallback(() => {
-      setStyle((prev) => ({ ...prev, color }));
-    }, [color]);
+    const { style, handleMouseOver, handleMouseOut } = useMouse({
+      defaultStyle: { color },
+      activeStyle: { color: activeColor },
+    });
 
     const handleClick = useCallback(() => {
       history.pushState(null, null, `#${hash}`);
@@ -31,7 +29,11 @@ export const HashLink = React.memo<Props>(
         onClick={handleClick}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
-        style={isActive ? { ...style, color: activeColor } : style}
+        style={
+          isActive
+            ? { ...style, color: activeColor, fontSize }
+            : { ...style, fontSize }
+        }
         data-testid="hash-link"
       >
         {children}

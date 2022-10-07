@@ -9,6 +9,7 @@ type Props = {
 
 export const InfoBlock = React.memo<Props>(({ header, description }) => {
   const theme = useContext(ThemeContext);
+
   return (
     <div className={styles.info_block} data-testid="info-block">
       <div

@@ -1,0 +1,11 @@
+.icon_btn {
+  border: none;
+  border-radius: 2000px;
+  transition: 300ms 100ms ease;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 4px 4px 4px black;
+  }
+}

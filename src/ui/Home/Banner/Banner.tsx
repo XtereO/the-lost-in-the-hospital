@@ -14,6 +14,7 @@ export const Banner = React.memo(() => {
   const handleProjectsClick = useCallback(() => {
     navigate(text.projects[0].products[0].to);
   }, []);
+
   return (
     <div
       className={styles.banner}

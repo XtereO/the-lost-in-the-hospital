@@ -1,12 +1,7 @@
 import { LanguageContext, ThemeContext } from "@core/context";
+import { useEventListener } from "@core/hooks";
 import { SubTopic, Topic as TopicType } from "@core/models";
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { useCallback, useContext, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavBlock } from "./nav-block";
 import { ProductNavBlock } from "./product-nav-block";
@@ -54,11 +49,7 @@ export const Projects = React.memo(() => {
       .filter((t: SubTopic & { ref: HTMLDivElement }) => t.hash === hash)[0]
       .ref.current.scrollIntoView({ behavior: "smooth" });
   }, [topics]);
-  useEffect(() => {
-    window.removeEventListener("hashchange", handleHashChange);
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [topics]);
+  useEventListener("hashchange", handleHashChange);
 
   return (
     <div className={styles.projects} data-testid="projects">

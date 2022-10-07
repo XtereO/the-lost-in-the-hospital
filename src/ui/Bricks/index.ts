@@ -6,5 +6,6 @@ export * from "./footer-nav-link";
 export * from "./hash-link";
 export * from "./header-icon";
 export * from "./header-nav-link";
+export * from "./icon-btn";
 export * from "./info-block";
 export * from "./job-card";

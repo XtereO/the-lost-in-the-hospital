@@ -10,11 +10,12 @@ type Props = {
 
 export const HeaderNavLink = React.memo<Props>(({ to, children }) => {
   const theme = useContext(ThemeContext);
+
   return (
     <div className={styles.container} data-testid="header-nav-link-container">
       <CustomizedNavLink
-        color={theme.header.navLink}
-        activeColor={theme.header.navLinkActive}
+        color={theme.header.navLink.default}
+        activeColor={theme.header.navLink.active}
         fontSize={22}
         to={to}
       >

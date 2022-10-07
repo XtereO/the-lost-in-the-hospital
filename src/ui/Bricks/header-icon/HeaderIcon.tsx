@@ -1,3 +1,4 @@
+import { IconBtn } from "@ui/bricks/icon-btn";
 import React from "react";
 import styles from "./HeaderIcon.scss";
 
@@ -13,7 +14,7 @@ export const HeaderIcon = React.memo<Props>(({ onClick, children }) => {
       onClick={onClick}
       data-testid="header-icon"
     >
-      {children}
+      <IconBtn onClick={onClick}>{children}</IconBtn>
     </div>
   );
 });

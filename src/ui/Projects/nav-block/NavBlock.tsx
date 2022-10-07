@@ -10,6 +10,7 @@ type Props = {
 
 export const NavBlock = React.memo<Props>(({ genre, products }) => {
   const theme = useContext(ThemeContext);
+
   return (
     <div className={styles.navigation_block} data-testid="navigation-block">
       <p
@@ -27,8 +28,8 @@ export const NavBlock = React.memo<Props>(({ genre, products }) => {
           <CustomizedNavLink
             key={product.title}
             fontSize={18}
-            color={theme.projects.navBlock.navLink}
-            activeColor={theme.projects.navBlock.navLinkActive}
+            color={theme.projects.navBlock.navLink.default}
+            activeColor={theme.projects.navBlock.navLink.active}
             to={product.to}
           >
             {product.title}

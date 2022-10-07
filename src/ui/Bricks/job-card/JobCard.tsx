@@ -11,6 +11,7 @@ type Props = {
 export const JobCard = React.memo<Props>(({ header, description }) => {
   const theme = useContext(ThemeContext);
   const text = useContext(LanguageContext);
+
   return (
     <div
       data-testid="job-card"
@@ -34,8 +35,8 @@ export const JobCard = React.memo<Props>(({ header, description }) => {
       <div data-testid="job-card-links" className={styles.job_card__links}>
         {text.contacts.map((t) => (
           <CustomizedLink
-            color={theme.job.cardLink}
-            activeColor={theme.job.cardLinkActive}
+            color={theme.job.cardLink.default}
+            activeColor={theme.job.cardLink.active}
             href={t.href}
             key={t.title}
           >
