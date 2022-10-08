@@ -9,3 +9,5 @@ export * from "./header-nav-link";
 export * from "./icon-btn";
 export * from "./info-block";
 export * from "./job-card";
+export * from "./tooltip";
+export * from "./touchable-div";

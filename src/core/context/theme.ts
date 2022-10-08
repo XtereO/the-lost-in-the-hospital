@@ -83,6 +83,18 @@ const light = {
     header: "rgb(154, 154, 154)",
     description: "rgba(0, 0, 0, 0.7)",
   },
+  tooltip: {
+    background: "rgb(255, 255, 255)",
+    borderColor: "rgba(255, 249, 255, 0.5)",
+  },
+  touchableDiv: {
+    default: {
+      color: "rgba(0, 0, 0, 0.6)",
+    },
+    active: {
+      color: "rgb(0, 0, 0)",
+    },
+  },
 };
 
 const dark: typeof light = {
@@ -167,6 +179,18 @@ const dark: typeof light = {
   infoBlock: {
     header: "rgb(154, 154, 154)",
     description: "rgba(0, 0, 0, 0.7)",
+  },
+  tooltip: {
+    background: "rgb(255, 255, 255)",
+    borderColor: "rgba(255, 249, 255, 0.5)",
+  },
+  touchableDiv: {
+    default: {
+      color: "rgba(0, 0, 0, 0.6)",
+    },
+    active: {
+      color: "rgb(0, 0, 0)",
+    },
   },
 };
 
